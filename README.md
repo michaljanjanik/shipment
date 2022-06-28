@@ -3,7 +3,7 @@ recruitment task
 
 ## How to run:
 
-Go to directory shipments, build virtualn env ('pipenv install'), load needed packagers (pip install -r requirements.txt ) run command:
+Go to directory shipments, build virtualn env ('pipenv install'), go into ('pipenv shell'), load needed packagers (pip install -r requirements.txt ), run command:
 
 './manage.py runserver'
 

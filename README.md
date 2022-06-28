@@ -1,7 +1,7 @@
 # shipment
 recruitment task
 
-#How to run:
+## How to run:
 
 Go to directory shipments, build virtualn env ('pipenv install'), load needed packagers (pip install -r requirements.txt ) run command:
 
@@ -9,7 +9,7 @@ Go to directory shipments, build virtualn env ('pipenv install'), load needed pa
 
 Go to shipments-gui, run command: 'npm install' and 'npm run serve'. The front should be on address: http://localhost:8080/
 
-#Data model:
+## Data model:
 
 I've created the four models: 
 
@@ -23,7 +23,7 @@ Parcel contains information about parcel (number) and addresses.
 Courier - name of the man, who deliver.
 Address: information about the sender or receiver.
 
-#Unit test
+## Unit test
 
 Go to 'shipments', and run './manage.py test' .
 

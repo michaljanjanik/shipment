@@ -100,7 +100,6 @@ export default {
       DeliveryDataService.create(data)
         .then(response => {
           this.Delivery.id = response.data.id;
-          console.log(response.data);
           this.submitted = true;
         })
         .catch(e => {

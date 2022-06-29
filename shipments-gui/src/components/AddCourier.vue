@@ -62,7 +62,6 @@ export default {
       CourierDataService.create(data)
         .then(response => {
           this.Courier.id = response.data.id;
-          console.log(response.data);
           this.submitted = true;
         })
         .catch(e => {

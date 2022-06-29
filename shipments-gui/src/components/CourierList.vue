@@ -45,7 +45,6 @@ export default {
       CourierDataService.getAll()
         .then(response => {
           this.Couriers = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);

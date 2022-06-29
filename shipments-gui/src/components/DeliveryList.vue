@@ -55,7 +55,6 @@ export default {
       DeliveryDataService.getAll()
         .then(response => {
           this.Deliveries = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);

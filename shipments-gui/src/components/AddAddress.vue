@@ -118,7 +118,6 @@ export default {
       AddressDataService.create(data)
         .then(response => {
           this.Address.id = response.data.id;
-          console.log(response.data);
           this.submitted = true;
         })
         .catch(e => {

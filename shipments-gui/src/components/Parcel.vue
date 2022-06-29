@@ -64,7 +64,6 @@ export default {
       ParcelDataService.get(id)
         .then(response => {
           this.currentParcel = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
@@ -82,7 +81,6 @@ export default {
     updateParcel() {
       ParcelDataService.update(this.currentParcel.id, this.currentParcel)
         .then(response => {
-          console.log(response.data);
           this.message = 'The Parcel was updated successfully!';
         })
         .catch(e => {
@@ -92,7 +90,7 @@ export default {
     deleteParcel() {
       ParcelDataService.delete(this.currentParcel.id)
         .then(response => {
-          this.$router.push({ name: "parcels-list" }); console.log(response);
+          this.$router.push({ name: "parcels-list" });
         })
         .catch(e => {
           console.log(e);

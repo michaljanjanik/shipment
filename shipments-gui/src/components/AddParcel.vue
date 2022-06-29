@@ -73,7 +73,6 @@ export default {
       ParcelDataService.create(data)
         .then(response => {
           this.Parcel.id = response.data.id;
-          console.log(response.data);
           this.submitted = true;
         })
         .catch(e => {

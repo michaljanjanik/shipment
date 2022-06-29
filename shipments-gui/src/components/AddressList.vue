@@ -53,7 +53,6 @@ export default {
       AddressDataService.getAll()
         .then(response => {
           this.Addresses = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);

@@ -86,7 +86,6 @@ export default {
           this.currentDelivery = response.data;
           this.currentDelivery.send_date=this.currentDelivery.send_date.substr(0, 16);
           this.currentDelivery.delivery_date=this.currentDelivery.delivery_date.substr(0, 16);
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
@@ -113,7 +112,6 @@ export default {
     updateDelivery() {
       DeliveryDataService.update(this.currentDelivery.id, this.currentDelivery)
         .then(response => {
-          console.log(response.data);
           this.message = 'The Delivery was updated successfully!';
         })
         .catch(e => {
@@ -123,7 +121,7 @@ export default {
     deleteDelivery() {
       DeliveryDataService.delete(this.currentDelivery.id)
         .then(response => {
-          this.$router.push({ name: "Deliverys-list" }); console.log(response);
+          this.$router.push({ name: "Deliverys-list" }); 
         })
         .catch(e => {
           console.log(e);

@@ -78,7 +78,6 @@ export default {
       AddressDataService.get(id)
         .then(response => {
           this.currentAddress = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
@@ -87,7 +86,6 @@ export default {
     updateAddress() {
       AddressDataService.update(this.currentAddress.id, this.currentAddress)
         .then(response => {
-          console.log(response.data);
           this.message = 'The Parcel was updated successfully!';
         })
         .catch(e => {
@@ -97,7 +95,7 @@ export default {
     deleteAddress() {
       AddressDataService.delete(this.currentAddress.id)
         .then(response => {
-          this.$router.push({ name: "address-list" }); console.log(response);
+          this.$router.push({ name: "address-list" });
         })
         .catch(e => {
           console.log(e);

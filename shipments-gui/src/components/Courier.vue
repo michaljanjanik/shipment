@@ -51,7 +51,6 @@ export default {
       CourierDataService.get(id)
         .then(response => {
           this.currentCourier = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
@@ -60,7 +59,6 @@ export default {
     updateCourier() {
       CourierDataService.update(this.currentCourier.id, this.currentCourier)
         .then(response => {
-          console.log(response.data);
           this.message = 'The Courier was updated successfully!';
         })
         .catch(e => {
@@ -70,7 +68,7 @@ export default {
     deleteCourier() {
       CourierDataService.delete(this.currentCourier.id)
         .then(response => {
-          this.$router.push({ name: "couriers-list" }); console.log(response);
+          this.$router.push({ name: "couriers-list" });
         })
         .catch(e => {
           console.log(e);

@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('deliveries', '0001_initial'),
+        ("deliveries", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='delivery',
-            name='delivery_date',
-            field=models.DateTimeField(null=True, verbose_name='date delivered'),
+            model_name="delivery",
+            name="delivery_date",
+            field=models.DateTimeField(null=True, verbose_name="date delivered"),
         ),
         migrations.AlterField(
-            model_name='delivery',
-            name='send_date',
-            field=models.DateTimeField(null=True, verbose_name='date sended'),
+            model_name="delivery",
+            name="send_date",
+            field=models.DateTimeField(null=True, verbose_name="date sended"),
         ),
     ]

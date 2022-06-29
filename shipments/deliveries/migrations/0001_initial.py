@@ -8,48 +8,118 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Address',
+            name="Address",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=64)),
-                ('family_name', models.CharField(max_length=200)),
-                ('street', models.CharField(max_length=200)),
-                ('city', models.CharField(max_length=200)),
-                ('post_code', models.CharField(max_length=5)),
-                ('country', models.CharField(max_length=64)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=64)),
+                ("family_name", models.CharField(max_length=200)),
+                ("street", models.CharField(max_length=200)),
+                ("city", models.CharField(max_length=200)),
+                ("post_code", models.CharField(max_length=5)),
+                ("country", models.CharField(max_length=64)),
             ],
         ),
         migrations.CreateModel(
-            name='Courier',
+            name="Courier",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=64)),
-                ('last_name', models.CharField(max_length=200)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=64)),
+                ("last_name", models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
-            name='Parcel',
+            name="Parcel",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('number', models.CharField(blank=True, max_length=32)),
-                ('delivery_address', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='parcel_to_deliver', to='deliveries.address')),
-                ('sender_address', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='parcel_to_send', to='deliveries.address')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("number", models.CharField(blank=True, max_length=32)),
+                (
+                    "delivery_address",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="parcel_to_deliver",
+                        to="deliveries.address",
+                    ),
+                ),
+                (
+                    "sender_address",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="parcel_to_send",
+                        to="deliveries.address",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Delivery',
+            name="Delivery",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('status', models.IntegerField(choices=[(1, 'New'), (2, 'Sending'), (3, 'On way'), (4, 'On delivery'), (5, 'Deliveder'), (6, 'Not delivered')], default=1)),
-                ('send_date', models.DateTimeField(verbose_name='date sended')),
-                ('delivery_date', models.DateTimeField(verbose_name='date delivered')),
-                ('courier', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='deliveries.courier')),
-                ('parcel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='deliveries.parcel')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "status",
+                    models.IntegerField(
+                        choices=[
+                            (1, "New"),
+                            (2, "Sending"),
+                            (3, "On way"),
+                            (4, "On delivery"),
+                            (5, "Deliveder"),
+                            (6, "Not delivered"),
+                        ],
+                        default=1,
+                    ),
+                ),
+                ("send_date", models.DateTimeField(verbose_name="date sended")),
+                ("delivery_date", models.DateTimeField(verbose_name="date delivered")),
+                (
+                    "courier",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to="deliveries.courier",
+                    ),
+                ),
+                (
+                    "parcel",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="deliveries.parcel",
+                    ),
+                ),
             ],
         ),
     ]
